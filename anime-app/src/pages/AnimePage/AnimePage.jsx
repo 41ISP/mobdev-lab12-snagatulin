@@ -8,19 +8,16 @@ function AnimePage() {
   const navigate = useNavigate();
 
   const fetchImages = async () => {
-    const imgs = [];
-    const count = 10 * loadCount;
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 2; i++) {
       try {
         const res = await fetch('https://api.nekosia.cat/api/v1/images/random');
         const json = await res.json();
         console.log(json);
-        imgs.push(json);
+        setImages(prev => [...prev, json]);
       } catch (err) {
         console.error(`Ошибка при запросе изображения ${i + 1}:`, err);
       }
     }
- setImages(imgs);
   };
 
   useEffect(() => {

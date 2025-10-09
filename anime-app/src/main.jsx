@@ -8,7 +8,7 @@ import './index.css'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <TelegramProvider>
-      <RouterProvider router={router} />
+      <RouterProvider router={router} basename="/mobdev-lab12-snagatulin"/>
     </TelegramProvider>
   </React.StrictMode>,
 )
